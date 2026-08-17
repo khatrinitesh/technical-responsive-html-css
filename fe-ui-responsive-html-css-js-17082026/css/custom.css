@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+:root {
+  --text-12: clamp(12px, 1.8vh, 12px);
+  --text-14: clamp(12px, 2.1vh, 14px);
+  --text-16: clamp(13px, 2.4vh, 16px);
+  --text-18: clamp(14px, 2.7vh, 18px);
+  --text-20: clamp(15px, 3vh, 20px);
+  --text-24: clamp(17px, 3.5vh, 24px);
+  --text-28: clamp(19px, 4vh, 28px);
+  --text-32: clamp(21px, 4.5vh, 32px);
+  --text-36: clamp(23px, 5vh, 36px);
+  --text-40: clamp(25px, 5.5vh, 40px);
+  --text-48: clamp(29px, 6.5vh, 48px);
+  --text-56: clamp(33px, 7.5vh, 56px);
+  --text-64: clamp(37px, 8.5vh, 64px);
+  --text-72: clamp(41px, 9.5vh, 72px);
+  --text-80: clamp(45px, 10.5vh, 80px);
+  --text-90: clamp(50px, 11.5vh, 90px);
+  --text-100: clamp(55px, 12.5vh, 100px);
+}
+@layer {
+  body {
+    background-color: azure;
+  }
+}
+
+@layer {
+  .content {
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .headTitle {
+    color: red;
+    font-size: var(--text-32);
+  }
+  .desc {
+    color: blue;
+    font-size: var(--text-16);
+  }
+}
+
+input[type="radio"] {
+  accent-color: orange;
+}
+
+.outerContent {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.outerContent .box {
+  flex-direction: column;
+  align-content: stretch;
+  display: flex;
+  align-self: flex-end;
+  outline: 2px solid blue;
+  padding: 10px;
+}
+
+.bxAnimation {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  animation: mymove 1s infinite;
+  position: relative;
+}
+
+@keyframes mymove {
+  0% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.boxAspectRatio {
+  padding: 10px;
+  background-color: aquamarine;
+  aspect-ratio: 6/3;
+}
+
+.parentBackdropFilter {
+  background: url("https://images.pexels.com/photos/28908219/pexels-photo-28908219.jpeg?_gl=1*1minxl7*_ga*NjM4ODkwNDEwLjE3ODUzODg2MjM.*_ga_8JE65Q40S6*czE3ODY5NTAxODYkbzQkZzEkdDE3ODY5NTAyNzQkajQ1JGwwJGgw");
+  padding: 10px;
+  height: 20vh;
+  background-blend-mode: color-dodge;
+}
+
+.parentBackdropFilter .childBackDropFilter {
+  backdrop-filter: blur(15px);
+  background-blend-mode: color;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+}
+
+.parentBackgroundClip {
+  border: 5px dashed red;
+  background-color: powderblue;
+  background-clip: border-box;
+  padding: 10px;
+}
+
+.parentBackgroundOrigin {
+  border: 5px dashed red;
+  background: url("https://www.w3schools.com/cssref/img_tree.gif");
+  background-repeat: repeat;
+  background-origin: padding-box;
+  background-size: contain;
+  background-position: 10px 20px;
+  padding: 20px;
+  height: 50vh;
+}
+
+.parentBlockSize {
+  background-color: powderblue;
+  padding: 20px;
+}
+
+.parentBlockSize .childBlockSize {
+  block-size: 40px;
+}
+
+.parentInsetTopRightBottomleft {
+  padding: 10px;
+  background-color: powderblue;
+  position: relative;
+  border: 5px solid salmon;
+}
+
+.parentInsetTopRightBottomleft .childInsertTopRightBottomLeft {
+  position: absolute;
+  inset: 0;
+}
+
+.image-box {
+  width: 300px;
+  margin: 100px auto;
+}
+
+.image-box img {
+  width: 100%;
+  display: block;
+  -webkit-box-reflect: right 100px
+    linear-gradient(transparent, rgba(255, 255, 255, 0.3));
+}
+
+.parentBoxShadow {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid red;
+  caption-side: top;
+  empty-cells: hide;
+}
+
+.boxClip {
+  width: 300px;
+  height: 300px;
+}
+
+.boxClip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  -moz-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.parentClipPath {
+  width: 400px;
+  height: 300px;
+  background: #222;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.parentClipPath .childClipPath {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  background: #ff66e6;
+  box-sizing: border-box;
+}
+
+.contentColumnCount {
+  column-count: 3;
+  column-gap: 30px;
+}
+
+.contentColumnFill {
+  width: 600px;
+  height: 300px;
+  column-count: 3;
+  column-gap: 30px;
+  column-fill: balance;
+  border: 2px solid #222;
+  padding: 20px;
+}
+
+.parentColumnGap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+}
+
+.parentColumnGap .childColumnGap {
+  padding: 30px;
+  background: #ff66e6;
+}
+
+.parentColumnSpan {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+  width: 800px;
+  margin: 50px auto;
+}
+
+.childColumnSpan {
+  padding: 40px;
+  background: #ff66e6;
+  text-align: center;
+}
+
+/* Child takes 2 columns */
+.child1 {
+  grid-column: span 2;
+}
+
+/* Child takes 1 column */
+.child2 {
+  grid-column: span 1;
+}
+
+/* Child takes 3 columns */
+.child3 {
+  grid-column: span 3;
+}
+
+/* Child takes 1 column */
+.child4 {
+  grid-column: span 1;
+}
+
+.parentColumnSpan {
+  width: 1200px;
+
+  display: grid;
+
+  /* 12 columns */
+  grid-template-columns: repeat(12, 1fr);
+
+  /* Gap between columns */
+  column-gap: 20px;
+
+  margin: 50px auto;
+}
+
+.childColumnSpan {
+  padding: 40px;
+  background: #ff66e6;
+  box-sizing: border-box;
+}
+
+/* Child spans 6 columns */
+.child1 {
+  grid-column: span 6;
+}
+
+/* Child spans 3 columns */
+.child2 {
+  grid-column: span 3;
+}
+
+/* Child spans 3 columns */
+.child3 {
+  grid-column: span 3;
+}
+
+.textLtr {
+  direction: ltr;
+  text-align: left;
+
+  width: 400px;
+  padding: 20px;
+  background: #eeeeee;
+}
+
+.textRtl {
+  direction: rtl;
+  text-align: right;
+
+  width: 400px;
+  padding: 20px;
+  background: #ff66e6;
+}
+
+.imageBlurContainer {
+  width: 500px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.imageBlur {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(8px);
+}
+
+.parentFlexBasis {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.childFlexBasis {
+  padding: 40px;
+  background: #ff66e6;
+  box-sizing: border-box;
+}
+
+/* Child starts with 30% width */
+.childFlexBasis30 {
+  flex-basis: 30%;
+}
+
+/* Child starts with 70% width */
+.childFlexBasis70 {
+  flex-basis: 70%;
+}
+
+.parentFlexGrow {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.childFlexGrow {
+  padding: 40px;
+  background: #ff66e6;
+}
+
+/* Takes 1 share */
+.childFlexGrow1 {
+  flex-grow: 1;
+}
+
+/* Takes 2 shares */
+.childFlexGrow2 {
+  flex-grow: 2;
+}
+
+/* Takes 1 share */
+.childFlexGrow3 {
+  flex-grow: 1;
+}
+
+.parentGridAreas {
+  display: grid;
+
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  width: 100%;
+  height: 100dvh;
+  gap: 10px;
+}
+
+/* Assign each child to an area */
+
+.childGridHeader {
+  grid-area: header;
+  background: #ff66e6;
+}
+
+.childGridSidebar {
+  grid-area: sidebar;
+  background: #ddd;
+}
+
+.childGridMain {
+  grid-area: main;
+  background: #eee;
+}
+
+.childGridFooter {
+  grid-area: footer;
+  background: #222;
+  color: white;
+}
